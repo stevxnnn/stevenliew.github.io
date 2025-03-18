@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steven - Cyberpunk Style</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000000;
+            overflow: hidden;
+        }
+
+        .cyberpunk-text {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 4vw;
+            color: #0ff;
+            text-shadow: 
+                2px 2px 0px #f0f,
+                -2px -2px 0px #0ff;
+            animation: glitch 3s infinite;
+            position: relative;
+        }
+
+        .cyberpunk-text::before,
+        .cyberpunk-text::after {
+            content: 'STEVEN';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .cyberpunk-text::before {
+            color: #f0f;
+            animation: glitch-effect 3s infinite;
+            clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+            transform: translate(-2px);
+        }
+
+        .cyberpunk-text::after {
+            color: #0ff;
+            animation: glitch-effect 2s infinite;
+            clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+            transform: translate(2px);
+        }
+
+        @keyframes glitch {
+            0% {
+                text-shadow: 2px 2px 0px #f0f, -2px -2px 0px #0ff;
+            }
+            25% {
+                text-shadow: -2px 2px 0px #f0f, 2px -2px 0px #0ff;
+            }
+            50% {
+                text-shadow: 2px -2px 0px #f0f, -2px 2px 0px #0ff;
+            }
+            75% {
+                text-shadow: -2px -2px 0px #f0f, 2px 2px 0px #0ff;
+            }
+            100% {
+                text-shadow: 2px 2px 0px #f0f, -2px -2px 0px #0ff;
+            }
+        }
+
+        @keyframes glitch-effect {
+            0% {
+                transform: translate(0);
+            }
+            20% {
+                transform: translate(-2px, 2px);
+            }
+            40% {
+                transform: translate(-2px, -2px);
+            }
+            60% {
+                transform: translate(2px, 2px);
+            }
+            80% {
+                transform: translate(2px, -2px);
+            }
+            100% {
+                transform: translate(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cyberpunk-text">STEVEN</div>
+</body>
+</html> 
